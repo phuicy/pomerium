@@ -17,7 +17,7 @@ FROM golang:1.17 as build
 WORKDIR /go/src/github.com/pomerium/pomerium
 
 RUN apt-get update \
-    && apt-get -y --no-install-recommends install zip
+    && apt-get -y --no-install-recommends --allow-unauthenticated install zip
 
 # cache depedency downloads
 COPY go.mod go.sum ./
